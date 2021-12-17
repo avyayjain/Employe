@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{%load crispy_forms_tags%}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.emp_name | as_crispy_field}}
+    <div class="row">
+        <div class="col-sm-4">
+            {{form.emp_id | as_crispy_field}}
+        </div>
+        <div class="col-sm-4">
+            {{form.emp_mobile_no | as_crispy_field}}
+        </div>
+        <div class="col-sm-4">
+            {{form.emp_email | as_crispy_field}}
+        </div>
+    </div>   
+        
+   <div class="row">
+       <div class="col-sm-4">
+        {{form.pos | as_crispy_field}}
+       </div>
+       <div class="col-sm-4">
+        {{form.emp_dob | as_crispy_field}}
+       </div>
+       <div class="col-sm-4">
+        {{form.emp_pic | as_crispy_field}}
+       </div>
+
+   </div>
+   
+    {{form.emp_address | as_crispy_field}}
+    <div class="row">
+        <div class="col-sm-6">
+            <button type="submit" class="btn btn-success btn-block btn-lg ">add data</button>
+        </div>
+        <div class="col-sm-6">
+            <a href="{% url 'data'%}" ><button type="button" class="btn btn-primary btn-block btn-lg ">Show data</button></a>
+        </div>
+        
+    </div>
+
+    
+</form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+   
+        
+            <a  href="{%url 'form'%}"><button type="button" class = "btn btn-success ">add form</button></a>
+        
+
+    {%for employee in employee%}
+
+        
+
+          <div class="card-group">
+            <div class="card">
+              <img src="{{employee.emp_pic.url}}" class="card-img-top" width="50" height="100">
+              <div class="card-body">
+                <h5 class="card-title">{{employee.emp_name}}</h5>
+              <p class="card-text">{{employee.emp_id}}</p>
+              <p class="card-text">{{employee.emp_mobile_no}}</p>
+              <p class="card-text">{{employee.emp_email}}</p>
+              <p class="card-text">{{employee.emp_address}}</p>
+              <p class="card-text">{{employee.emp_pos}}</p>
+              <p class="card-text">{{employee.emp_dob}}</p>
+              </div>
+            </div>
+          </div>    
+  
+    
+    {%endfor%}
+
+
+{% endblock %}
